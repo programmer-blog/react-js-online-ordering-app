@@ -21,8 +21,6 @@
 
 ## Food Ordering App
 
-/\*\*
-
 - Project UI Structure
 - Header
 - - Logo
@@ -31,14 +29,13 @@
 - - Search
 - - Restaurant Container
 -      - RestaurantCard
--          - Img
--          - Name of Res, Start Rating, Cuisine, delivery time
+-      - Img
+-      - Name of Res, Start Rating, Cuisine, delivery time
 - Footer
 - - Copyright
 - - Links
 - - Address
-- - Contactnpm start
-    \*/
+- - Contact
 
 Two types of Export/Import
 
