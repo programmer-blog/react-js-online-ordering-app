@@ -18,3 +18,36 @@
 - Https
 - Tree Shaking – Remove Unused Code
 - Different dev and prod bundles
+
+## Food Ordering App
+
+/\*\*
+
+- Project UI Structure
+- Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - Restaurant Container
+-      - RestaurantCard
+-          - Img
+-          - Name of Res, Start Rating, Cuisine, delivery time
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contactnpm start
+    \*/
+
+Two types of Export/Import
+
+- Default Export/Import
+
+export default Component;
+import Component from "path"
+
+- Named Export/Import
+
+export const Component;
+import {Component} from "path"
