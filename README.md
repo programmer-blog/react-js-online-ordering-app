@@ -1,4 +1,4 @@
-#React
+# React JS
 
 ## Parcel
 
@@ -28,10 +28,10 @@
 - Body
 - - Search
 - - Restaurant Container
--      - RestaurantCard
--      - Img
--      - Name of Res, Start Rating, Cuisine, delivery time
-- Footer
+- RestaurantCard
+- - Img
+- - Name of Restaurant, Star Rating, Cuisines, Delivery Time
+- - Footer
 - - Copyright
 - - Links
 - - Address
