@@ -26,11 +26,11 @@
 - - Logo
 - - Nav Items
 - Body
-- - Search
-- - Restaurant Container
+- Search
+- Restaurant Container
 - RestaurantCard
-- - Img
-- - Name of Restaurant, Star Rating, Cuisines, Delivery Time
+- Img
+- Name of Restaurant, Star Rating, Cuisines, Delivery Time
 - - Footer
 - - Copyright
 - - Links
