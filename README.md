@@ -75,3 +75,16 @@ Virtual DOM is a representation of Actual DOM. Virtual DOM are react elements or
 ### Diff Algorithm
 
 Diff Algorithm finds out the difference between the DOM and previous Virtual DOM.
+
+Whenever state variable updates react trigger a reconciliation cycle
+It re renders the components.
+
+Using state variable react will re renders the UI and updates the variables.
+Normal local vars only update the values not UI.
+React is fast because of react fiber algorthim (the new reconciliation algorithim) - it finds the difference between two virtual doms and updates the portion that is required to change.
+
+React Fiber, along with the reconciliation algorithm, contributes to React's speed and efficiency by introducing a more sophisticated and adaptable approach to updating the UI. It enables React to handle complex component trees and deliver a fast and responsive user experience.
+
+To fix CORS issue append this URL before the call. https://corsproxy.io/?
+
+`const data = await fetch("https://corsproxy.io/?https://www.api-example.com/api......`
