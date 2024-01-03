@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 const Body = () => {
     //Local State Variable - uper Powrful variable - Hooks - useState
     // A react hook is a normal JavaScript function
@@ -54,7 +54,9 @@ const Body = () => {
                     {
                         filteredRestaurant.map(
                             (restaurant) => (
-                                <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                                <Link
+                                    key={restaurant.info.id}
+                                    to={"/restaurants/" + restaurant.info.id}><RestaurantCard key={restaurant.info.id} resData={restaurant} /></Link>
                             )
                         )
                     }

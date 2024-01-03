@@ -88,3 +88,8 @@ React Fiber, along with the reconciliation algorithm, contributes to React's spe
 To fix CORS issue append this URL before the call. https://corsproxy.io/?
 
 `const data = await fetch("https://corsproxy.io/?https://www.api-example.com/api......`
+
+# 2 types of Routing in web apps
+
+- Cleint side Routing - No network call.
+- Server side Routing - Make a network call - page is loaded from server
