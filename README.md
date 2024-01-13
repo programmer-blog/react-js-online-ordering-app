@@ -93,3 +93,49 @@ To fix CORS issue append this URL before the call. https://corsproxy.io/?
 
 - Cleint side Routing - No network call.
 - Server side Routing - Make a network call - page is loaded from server
+
+##Class base components
+`class UserClass extends React. Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className='test-class'>
+                ....
+            </div>
+        );
+    }
+
+}`
+
+We use extends parameter from React.Component. Creare a constructor and receive props. In props call super(props).
+
+In class body use reander method. add a return () mehtod.
+
+### Using state in Class based componenets
+
+    ` this.state = {
+            count: 0,
+        }`
+
+    `{this.state.count}`
+
+    #### Never update state vars directly
+
+In class based componenets - first constructor is called then render method is called.
+Life Cycle methods
+
+- Parent Constructor
+- Parent Render
+  - Child Constructor
+  - Child Render
+  - Child ComponentDidMount
+- Parent ComponentDidMount
+  React 'life Cycle
+- Render Phase
+- Mounting - Constructor - Render
+- Commit Phase
+- ComponentDidMount
