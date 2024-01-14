@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
     //Local State Variable - uper Powrful variable - Hooks - useState
     // A react hook is a normal JavaScript function
@@ -21,6 +22,11 @@ const Body = () => {
         setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus == false) return <h1>Looks like your are offline.
+        Please check your internet connection.
+    </h1>
     //conditional rendering
     return listOfRestaurants.length == 0
         ? <Shimmer /> : (

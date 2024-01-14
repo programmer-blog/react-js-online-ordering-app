@@ -139,3 +139,27 @@ Life Cycle methods
 - Mounting - Constructor - Render
 - Commit Phase
 - ComponentDidMount
+
+- Custom Hooks - Use use keyword
+
+- Hww large react applications are optimized. it is called
+- Chunking
+- Code Spliting
+- Dynamic Bundling
+- Lazy Loading
+- On demand loading
+
+#### Instead of lading a component using impor {.. } from ..
+
+## The lazy() method is used.
+
+Instead of `import Grocery from "./components/Grocery";`
+use: `const Grocery = lazy(() => import('/components/Grocery')) `
+
+but page takes time to load so use <Suspense> with a fallback for react for intermediary stage.
+`import React, { lazy, Suspense } from "react";`
+In Router
+`{
+                path: "/grocery",
+                element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+            },`
