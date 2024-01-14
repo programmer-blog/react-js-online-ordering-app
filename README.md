@@ -163,3 +163,23 @@ In Router
                 path: "/grocery",
                 element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
             },`
+
+###TailwindCSS
+Installation
+`>> npm install -D tailwindcss postcss autoprefixer
+    >> npx tailwindcss init`
+
+    #### Flex
+    `className="flex"`
+    Elements are displayed sisde by side
+
+    #### Width
+    `w-56`
+
+    To add space between items
+
+    `justify-between`
+
+    Padding - margin
+
+`p-4 m-4`
