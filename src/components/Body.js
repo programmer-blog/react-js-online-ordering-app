@@ -1,14 +1,17 @@
-import RestaurantCard from "./RestaurantCard"
-import { useEffect, useState } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard"
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withPromotedLabel } from "./RestaurantCard";
+import UserContext from "../utils/Usercontext";
 const Body = () => {
     //Local State Variable - uper Powrful variable - Hooks - useState
     // A react hook is a normal JavaScript function
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredRestaurant, setfilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
     useEffect(() => {
         fetchData();
@@ -27,6 +30,7 @@ const Body = () => {
     if (onlineStatus == false) return <h1>Looks like your are offline.
         Please check your internet connection.
     </h1>
+    const { setUserName, loggedInUser } = useContext(UserContext);
     //conditional rendering
     return listOfRestaurants.length == 0
         ? <Shimmer /> : (
@@ -46,6 +50,8 @@ const Body = () => {
                                 setfilteredRestaurant(filteredRestaurants);
 
                             }}>Search</button>
+
+
                     </div>
                     <div className="search m-4 p-4
                     items-center flex">
@@ -59,7 +65,13 @@ const Body = () => {
                             }}
                         >Top Rated Restaurants</button>
                     </div>
-
+                    <div className="search m-4 p-4
+                    items-center flex">
+                        <label className="mx-2">Username: </label>
+                        <input type="text" className=" p-2 border border-solid border-black" value={loggedInUser} onChange={(e) => {
+                            setUserName(e.target.value)
+                        }} />
+                    </div>
                 </div>
                 <div className="flex flex-wrap">
                     {
@@ -67,7 +79,16 @@ const Body = () => {
                             (restaurant) => (
                                 <Link
                                     key={restaurant.info.id}
-                                    to={"/restaurants/" + restaurant.info.id}><RestaurantCard key={restaurant.info.id} resData={restaurant} /></Link>
+                                    to={"/restaurants/" + restaurant.info.id}>
+                                    {/* `{
+                                        restaurant.data.promoted ? <RestaurantCardPromoted key={restaurant.info.id}
+                                            resData={restaurant} />
+                                            : <RestaurantCard key={restaurant.info.id}
+                                                resData={restaurant} />
+                                    }` */}
+                                    <RestaurantCard key={restaurant.info.id}
+                                        resData={restaurant} />
+                                </Link>
                             )
                         )
                     }

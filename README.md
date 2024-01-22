@@ -183,3 +183,28 @@ Installation
     Padding - margin
 
 `p-4 m-4`
+
+### Higher Order Components
+
+### Lifting the state up
+
+### Props Drilling
+
+React has one way data stream. Dat is passed from parent to children - top to bottom
+
+React Context : Avoid props drilling - A global data - Context is global
+
+    `import { createContext } from "react";
+
+    const userContext = createContext({
+        loggedInUser: "Default User"
+    });
+
+    export default userContext;
+
+        const { loggedInUser } = useContext(UserContext);
+
+        {loggedInUser}
+    `
+    Onlly the data that is going to be used in multiple places that should be used in context.
+
