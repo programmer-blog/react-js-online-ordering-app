@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MENU_API_URL } from "../utils/constants";
 
 const useRestaurantMenu = (resId) => {
-    
+
     const [restInfo, setResInfo] = useState(null);
 
     useEffect(() => {

@@ -208,3 +208,61 @@ React Context : Avoid props drilling - A global data - Context is global
     `
     Onlly the data that is going to be used in multiple places that should be used in context.
 
+### Redux - Redux ToolKit - RTK
+
+Redux is used for state management.
+React and Redux are separate libraries
+Redux can be considered as a huge JS object with a lot of data.
+Redux store is divided into small parts known as slices.
+We create multiple slices in store. Cart slice - user slice
+We cannot add data directly to slice.
+When we click a button suppose Add button - it dispatches an action.
+Dispatch action Calls a function.
+
+#### Click Product Add button -> Dispatch and action -> Call a function -> function will modify the slice.
+
+#### Dispatch an Action ==> Calls Reducer function => Modifies the slice of the Redux store => dispatch => reducer => update the cart
+
+#### Getting data from store. We use a selector - Use a selector to give data to the component
+
+#### This is phenomena is known as Subscribing to the store
+
+We have a Store Slice -> Subscribe to store using selector
+
+Click on add button dispatches an action calls the reducer function and updates the slice of store.
+Components are subscribed to the store using a selector.
+
+- Steps for Redux
+  - Install the @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect store to app
+  - Slice (cartSlice)
+  - dispatch(action)
+  - Selector
+    `npm install @reduxjs/toolkit`
+    `npm install react-redux`
+ Example slice:
+
+  `import { createSlice } from "@reduxjs/toolkit";
+
+const cartSlice = createSlice({
+    name: 'cart',
+    initialState: {
+        items: []
+    },
+    reducers: {
+        addItem: (state, action) => {
+            state.item.push(action.payload);
+        },
+        removeItem: (state) => {
+            state.items.pop();
+        },
+        clearCart: (state) => {
+            state.items.length = 0;
+        }
+    }
+});
+
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
+
+export default cartSlice.reducer;`

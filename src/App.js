@@ -10,7 +10,11 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/Usercontext";
 //import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
+//Provider is bridge between application and store
+//Wrap app inside whole store
 //Chunking
 //Code Spliting
 //Dynamic Bundling
@@ -29,13 +33,15 @@ const AppLayout = () => {
     }, []);
 
     return (
-        <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-            <div className="app">
-                <Header />
-                <Outlet />
-                {/* outlet will be filled by the cildren according to the route */}
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <div className="app">
+                    <Header />
+                    <Outlet />
+                    {/* outlet will be filled by the cildren according to the route */}
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 };
 
