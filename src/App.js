@@ -12,6 +12,7 @@ import UserContext from "./utils/Usercontext";
 //import Grocery from "./components/Grocery";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 //Provider is bridge between application and store
 //Wrap app inside whole store
@@ -69,6 +70,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             },
         ],
         errorElement: <Error />
